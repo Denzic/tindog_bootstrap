@@ -1,0 +1,41 @@
+@import "./variables";
+
+.container-fluid {
+  padding: 7% 15% 7%;
+}
+
+.colored-section {
+  background-color: $primaryColor;
+  color: $white;
+}
+
+.white-section {
+  background-color: $white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+}
+
+/* Headings */
+.big-heading {
+  font-weight: 900;
+  font-size: 3.5rem;
+}
+
+.section-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.apple-d,
+.android-d {
+  margin: 40px 20px 0 0;
+}

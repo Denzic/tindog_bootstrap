@@ -1,10 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Ubuntu&display=swap");
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+  }
+  20% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  40% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  60% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  80% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  100% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+  }
+}
+@keyframes shake {
+  0% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+  }
+  20% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  40% {
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+  }
+  60% {
+    -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+  }
+  80% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  100% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+  }
+}
 
-/* Utility */
-body {
-  font-family: 'Ubuntu', sans-serif;
-  text-align: center;
-  color: #333;
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 .container-fluid {
@@ -39,6 +106,18 @@ h6 {
 .section-heading {
   font-size: 3rem;
   font-weight: 700;
+  line-height: 1.5;
+}
+
+.apple-d,
+.android-d {
+  margin: 40px 20px 0 0;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  color: #333;
 }
 
 /* 1. Title */
@@ -47,33 +126,34 @@ h6 {
   text-align: left;
 }
 
-.navbar {
+#title .container-fluid nav.navbar {
   margin-bottom: 7%;
   padding: 0;
 }
 
-.apple-d,
-.android-d {
-  margin: 40px 20px 0 0;
+#title .container-fluid nav.navbar .navbar-brand {
+  font-weight: bold;
+  font-size: 2.5rem;
 }
 
-.nav-link {
+#title .container-fluid nav.navbar .nav-link {
   font-size: 1.2rem;
   font-weight: lighter;
   margin-right: 40px;
   color: #fff !important;
 }
 
-.navbar-brand {
-  font-weight: bold;
-  font-size: 2.5rem;
-}
-
-.dog {
-  transform: rotate(25deg);
+#title .container-fluid .dog {
+  -webkit-transform: rotate(25deg);
+          transform: rotate(25deg);
   width: 50%;
   position: absolute;
   right: 30%;
+}
+
+#title .container-fluid .dog:hover {
+  -webkit-animation: shake 0.6s 1;
+          animation: shake 0.6s 1;
 }
 
 /* 2. Feature Section */
@@ -81,69 +161,69 @@ h6 {
   position: relative;
 }
 
-.feature-box {
-  padding: 4.5%;
-}
-
-.feature-icon {
-  margin-bottom: 20px;
-  color: #ef8172;
-}
-
-.feature-icon:hover {
-  color: #ff4c68
-}
-
-.feature-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
 #features .container {
   padding: 5% 0;
 }
 
-/* 3. Testimonial & Press */
+#features .container .feature-box {
+  padding: 4.5%;
+}
+
+#features .container .feature-icon {
+  margin-bottom: 20px;
+  color: #ef8172;
+}
+
+#features .container .feature-icon:hover {
+  -webkit-animation: spin 0.2s 1;
+          animation: spin 0.2s 1;
+}
+
+#features .container .feature-icon:hover {
+  color: #ff4c68;
+}
+
+#features .container .feature-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 3. Testimonial */
 #testimonials {
   padding-bottom: 0;
   background: #ef8172;
   color: #fff;
 }
 
-.testimonial-text {
+#testimonials .testimonial-text {
   line-height: 1.5;
   font-weight: 700;
   font-size: 3rem;
 }
 
-.testimonials-img {
+#testimonials .testimonials-img {
   border-radius: 50%;
   margin: 20px;
   width: 10%;
 }
 
+/* 4. Press */
 #press {
   padding-bottom: 3%;
   background: #ef8172;
 }
 
-.press_logo {
+#press .press_logo {
   width: 15%;
   margin: 20px 20px 50px;
 }
 
 /* 4. Pricing */
-.price-text {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
 #pricing .container-fluid {
   padding: 5% 15%;
 }
 
-#pricing .col-lg-4 {
+#pricing .container-fluid .col-lg-4 {
   padding: 4.5% 2%;
 }
 
@@ -157,19 +237,20 @@ h6 {
   margin-top: 10px;
 }
 
-.social-icon {
+#footer .social-icon {
   padding: 0 15px;
   color: #333;
 }
 
-@media (max-width:1028px) {
+@media (max-width: 1028px) {
   .dog {
     margin-top: 50px;
     position: static;
-    transform: rotate(0);
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
   }
-
   #title .container-fluid {
     text-align: center;
   }
 }
+/*# sourceMappingURL=styles.css.map */

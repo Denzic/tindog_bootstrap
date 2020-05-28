@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Ubuntu&display=swap');
+@import "./animations";
+@import "./utilities";
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  color: $darkGray;
+}
+
+/* 1. Title */
+#title .container-fluid {
+  padding: 3% 15% 7%;
+  text-align: left;
+
+  nav.navbar {
+    margin-bottom: 7%;
+    padding: 0;
+
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+
+    .nav-link {
+      font-size: 1.2rem;
+      font-weight: lighter;
+      margin-right: 40px;
+      color: $white !important;
+    }
+  }
+
+  .dog {
+    transform: rotate(25deg);
+    width: 50%;
+    position: absolute;
+    right: 30%;
+
+    &:hover {
+      animation: shake 0.6s 1
+    }
+  }
+}
+
+/* 2. Feature Section */
+#features {
+  position: relative;
+
+  .container {
+    padding: 5% 0;
+
+    .feature-box {
+      padding: 4.5%;
+    }
+
+    .feature-icon {
+      margin-bottom: 20px;
+      color: $secondaryColor;
+
+      &:hover {
+        animation: spin 0.2s 1;
+      }
+    }
+
+    .feature-icon:hover {
+      color: $primaryColor
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+}
+
+/* 3. Testimonial */
+#testimonials {
+  padding-bottom: 0;
+  background: $secondaryColor;
+  color: $white;
+
+  .testimonial-text {
+    line-height: 1.5;
+    font-weight: 700;
+    font-size: 3rem;
+  }
+
+  .testimonials-img {
+    border-radius: 50%;
+    margin: 20px;
+    width: 10%;
+  }
+}
+
+/* 4. Press */
+#press {
+  padding-bottom: 3%;
+  background: $secondaryColor;
+
+  .press_logo {
+    width: 15%;
+    margin: 20px 20px 50px;
+  }
+}
+
+/* 4. Pricing */
+#pricing .container-fluid {
+  padding: 5% 15%;
+
+  .col-lg-4 {
+    padding: 4.5% 2%;
+  }
+}
+
+/* 5. Footer */
+#footer {
+  font-size: small;
+  padding: 0 15%;
+
+  p {
+    margin-top: 10px;
+  }
+
+  .social-icon {
+    padding: 0 15px;
+    color: $darkGray;
+  }
+}
+
+@media (max-width:1028px) {
+  .dog {
+    margin-top: 50px;
+    position: static;
+    transform: rotate(0);
+  }
+
+  #title .container-fluid {
+    text-align: center;
+  }
+}
